@@ -8,7 +8,7 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 COPY ["MachineDetailsWebAPI/MachineDetailsAPI.csproj", "MachineDetailsAPI/"]
-RUN dotnet restore "MachineDetailsAPI/MachineDetailsAPI.csproj"
+RUN dotnet restore "MachineDetailsWebAPI/MachineDetailsAPI.csproj"
 COPY . .
 WORKDIR "/src/MachineDetailsAPI"
 RUN dotnet build "MachineDetailsAPI.csproj" -c Release -o /app/build
